@@ -17,7 +17,7 @@ export default function Home() {
   const [errorNews, setErrorNews] = useState<string | null>(null);
 
 
-  useEffect(() => {
+  useEffect(() => {  
     const fetchHomeData = async () => {
       // Fetch Events
       try {
