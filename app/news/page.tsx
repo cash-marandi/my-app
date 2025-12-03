@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link'; // Added Link import
 // import { db } from '@/services/mockDb'; // REMOVE THIS IMPORT
 import { NewsPost } from '@/types';
 import Card from '@/components/UI/Card';
@@ -64,7 +65,7 @@ export default function News() {
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">{item.title}</h3>
                         <p className="text-gray-600 text-sm mb-4 line-clamp-3">{item.excerpt}</p>
-                        <button className="text-primary-600 font-medium text-sm hover:underline">Read Article</button>
+                        <Link href={`/news/${item.id}`} className="text-primary-600 font-medium text-sm hover:underline">Read Article</Link>
                         </div>
                     </Card>
                 ))

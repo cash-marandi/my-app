@@ -78,7 +78,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-4 py-2 rounded-full bg-green-900 border border-gray-200 text-white font-medium text-sm mb-6 shadow-sm">
+              <div className="inline-block px-4 py-2 rounded-full bg-blue-950 border border-gray-200 text-white font-medium text-sm mb-6 shadow-sm">
                 Building a brighter future together
               </div>
               <h1 className="text-5xl md:text-7xl font-serif font-bold text-gray-900 leading-tight mb-6">
@@ -150,8 +150,8 @@ export default function Home() {
               { icon: Users, title: "Community Driven", desc: "Programs designed by the community, for the community." },
               { icon: Trophy, title: "Expert Mentorship", desc: "Learn from industry professionals with real-world experience." },
             ].map((feature, idx) => (
-              <Card key={idx} delay={idx * 0.1} className="p-8 hover:bg-green-100 hover:border-green-900 group">
-                <div className="w-14 h-14 bg-green-900 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:bg-primary-500 group-hover:text-white transition-colors">
+              <Card key={idx} delay={idx * 0.1} className="p-8 hover:bg-blue-100 hover:border-blue-900 group">
+                <div className="w-14 h-14 bg-blue-950 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors">
                   <feature.icon size={28} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>

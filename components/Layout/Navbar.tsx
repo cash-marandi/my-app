@@ -53,8 +53,8 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.name}
                 href={link.path} // Changed to href
-                className={`text-sm font-medium transition-colors hover:text-primary-600 ${
-                  pathname === link.path ? 'text-blue-950' : 'text-green-800' // Use pathname here
+                className={`text-sm font-medium transition-colors hover:text-blue-950 ${
+                  pathname === link.path ? 'text-blue-950' : 'text-blue-950' // Use pathname here
                 }`}
               >
                 {link.name}
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
             ))}
             <Link
               href="/contact" // Changed to href
-              className="px-5 py-2.5 bg-green-900 hover:bg-primary-700 text-white text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all flex items-center gap-2 transform hover:-translate-y-0.5"
+              className="px-5 py-2.5 bg-blue-950 hover:bg-blue-800 text-white text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all flex items-center gap-2 transform hover:-translate-y-0.5"
             >
               <Heart size={16} fill="currentColor" />
               Donate
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden z-50 p-2 text-gray-600 hover:text-primary-600 transition-colors"
+            className="md:hidden z-50 p-2 text-gray-600 hover:text-blue-950 transition-colors"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -92,14 +92,14 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.name}
                 href={link.path} // Changed to href
-                className="text-2xl font-serif font-medium text-gray-800 hover:text-primary-600 transition-colors"
+                className="text-2xl font-serif font-medium text-blue-950 hover:text-blue-950 transition-colors"
               >
                 {link.name}
               </Link>
             ))}
             <Link
               href="/contact" // Changed to href
-              className="mt-8 px-8 py-3 bg-primary-600 text-white rounded-full text-lg font-medium shadow-lg"
+              className="mt-8 px-8 py-3 bg-blue-950 text-white rounded-full text-lg font-medium shadow-lg"
             >
               Donate Now
             </Link>

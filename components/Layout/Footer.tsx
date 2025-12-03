@@ -10,14 +10,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary-500 rounded flex items-center justify-center text-white font-bold">
-                P
-              </div>
-              <span className="font-serif font-bold text-xl text-white">
-                Panorama<span className="text-primary-500">SDC</span>
-              </span>
-            </div>
+            <img 
+              src="/images/logo.png" 
+              alt="Panorama SDC Logo" 
+              className="h-10 w-auto" 
+              style={{ filter: 'drop-shadow(0 0 5px rgba(255, 255, 255, 0.7))' }} // Added white drop shadow
+            />
             <p className="text-sm leading-relaxed text-slate-400">
               Empowering communities through skills development, education, and sustainable growth initiatives in White River, Mpumalanga.
             </p>
@@ -78,6 +76,12 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
           <p>&copy; {new Date().getFullYear()} Panorama Skill Development Centre. All rights reserved.</p>
+          <p className="mt-2">
+            Website built by{' '}
+            <a href="https://www.livelonke.co.za" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+              Live Lonke ICT
+            </a>
+          </p>
         </div>
       </div>
     </footer>
