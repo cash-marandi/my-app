@@ -6,11 +6,21 @@ import { Service } from '@/types';
 const DB_NAME = 'panorama_skill_development';
 const COLLECTION_NAME = 'services';
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET(request: Request, context: { params: Promise<{ id: string; }> }) {
   try {
+    const resolvedParams = await context.params;
+    const { id } = resolvedParams;
+
     const { client } = await connectToDatabase();
     const db = client.db(DB_NAME);
-    const service = await db.collection<Service>(COLLECTION_NAME).findOne({ _id: new ObjectId(params.id) });
+    let objectId;
+    try {
+      objectId = new ObjectId(id);
+    } catch (e) {
+      return NextResponse.json({ message: 'Invalid Service ID format' }, { status: 400 });
+    }
+
+    const service = await db.collection<Service>(COLLECTION_NAME).findOne({ _id: objectId });
     if (!service) {
       return NextResponse.json({ message: 'Service not found' }, { status: 404 });
     }
@@ -20,13 +30,16 @@ export async function GET(request: Request, { params }: { params: { id: string }
   }
 }
 
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
+export async function PUT(request: Request, context: { params: Promise<{ id: string; }> }) {
   try {
+    const resolvedParams = await context.params;
+    const { id } = resolvedParams;
+
     const updatedService: Partial<Omit<Service, 'id'>> = await request.json();
     const { client } = await connectToDatabase();
     const db = client.db(DB_NAME);
     const result = await db.collection<Service>(COLLECTION_NAME).updateOne(
-      { _id: new ObjectId(params.id) },
+      { _id: new ObjectId(id) }, // Use the resolved ID
       { $set: updatedService }
     );
     if (result.matchedCount === 0) {
@@ -38,11 +51,14 @@ export async function PUT(request: Request, { params }: { params: { id: string }
   }
 }
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+export async function DELETE(request: Request, context: { params: Promise<{ id: string; }> }) {
   try {
+    const resolvedParams = await context.params;
+    const { id } = resolvedParams;
+
     const { client } = await connectToDatabase();
     const db = client.db(DB_NAME);
-    const result = await db.collection<Service>(COLLECTION_NAME).deleteOne({ _id: new ObjectId(params.id) });
+    const result = await db.collection<Service>(COLLECTION_NAME).deleteOne({ _id: new ObjectId(id) });
     if (result.deletedCount === 0) {
       return NextResponse.json({ message: 'Service not found' }, { status: 404 });
     }
