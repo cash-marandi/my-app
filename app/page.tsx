@@ -6,7 +6,7 @@ import { ArrowRight, Users, BookOpen, Trophy, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import Card from '@/components/UI/Card';
 // import { db } from '@/services/mockDb'; // REMOVE THIS IMPORT
-import { Event, NewsPost } from '@/types';
+import { Event, NewsPost } from '@/types'; 
 
 export default function Home() {
   const [events, setEvents] = useState<Event[]>([]);
