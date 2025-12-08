@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
               style={{ filter: 'drop-shadow(0 0 5px rgba(255, 255, 255, 0.7))' }} // Added white drop shadow
             />
             <p className="text-sm leading-relaxed text-slate-400">
-              Empowering communities through skills development, education, and sustainable growth initiatives in White River, Mpumalanga.
+              Empowering communities through skills development, empowerment, and sustainable growth initiatives in and around Mbombela.
             </p>
           </div>
 
