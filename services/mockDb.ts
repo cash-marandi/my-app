@@ -74,27 +74,33 @@ const INITIAL_NEWS: NewsPost[] = [
 ];
 
 const INITIAL_SERVICES: Service[] = [
-  { id: '1', title: 'Vocational Training', description: 'Hands-on skills for real-world jobs.', icon: 'Hammer' },
-  { id: '2', title: 'Digital Literacy', description: 'Computer basics to advanced coding.', icon: 'Laptop' },
-  { id: '3', title: 'Soft Skills', description: 'Communication, leadership, and teamwork.', icon: 'Users' },
-  { id: '4', title: 'Job Placement', description: 'Connecting talent with opportunity.', icon: 'Briefcase' },
+  { id: '1', title: 'Empowerment Workshops for Women', description: 'Providing relevant information for personal development, including Gender Based Violence workshops.', icon: 'Users' },
+  { id: '2', title: 'Housekeeping Training', description: 'Three days of theory and two weeks of practicals to help unemployed women find jobs as domestic workers.', icon: 'Briefcase' },
+  { id: '3', title: 'Hairdressing Training', description: 'A 3-day practical training to enhance hairdressing skills for women and youth.', icon: 'Award' },
+  { id: '4', title: 'Shop Assistance Training', description: 'A 3-day training focusing on customer care to prepare participants for the retail job market.', icon: 'ShoppingCart' },
+  { id: '5', title: 'Corporate Financial Management', description: 'A 3-day training for small businesses and co-operatives on financial management.', icon: 'DollarSign' },
+  { id: '6', title: 'Youth Empowerment Workshops', description: 'Workshops for young school girls for personal growth and the distribution of sanitary towels.', icon: 'Heart' },
 ];
 
 // Helper to simulate DB delay
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
+const DB_VERSION = '1.1'; // Increment to force a refresh
+
 class MockDB {
   private get<T>(key: string, initial: T): T {
-    const stored = localStorage.getItem(key);
+    const versionedKey = `${key}_v${DB_VERSION}`;
+    const stored = localStorage.getItem(versionedKey);
     if (!stored) {
-      localStorage.setItem(key, JSON.stringify(initial));
+      localStorage.setItem(versionedKey, JSON.stringify(initial));
       return initial;
     }
     return JSON.parse(stored);
   }
 
   private set<T>(key: string, data: T): void {
-    localStorage.setItem(key, JSON.stringify(data));
+    const versionedKey = `${key}_v${DB_VERSION}`;
+    localStorage.setItem(versionedKey, JSON.stringify(data));
   }
 
   // --- Team ---

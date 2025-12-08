@@ -15,7 +15,7 @@ export default function About() {
           >
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-blue-950 mb-6">About Panorama</h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              We are a non-profit organization dedicated to uplifting the community of White River through education, skills development, and social cohesion.
+              Panorama Skills Development Center is a non-profit organization based in The City of Mbombela, established in 2016. Our aim is to bridge the gap of unemployment and lack of skills amongst women and youth. We focus on women empowerment and development through life skills seminars and workshops, educating and sharing information to hinder their development and decrease the unemployment and poverty rate in communities.
             </p>
           </motion.div>
         </div>
@@ -30,14 +30,14 @@ export default function About() {
               className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
             >
               <h3 className="text-2xl font-serif font-bold text-blue-950 mb-4">Our Mission</h3>
-              <p className="text-gray-600">To equip individuals with relevant skills that foster economic independence and personal growth.</p>
+              <p className="text-gray-600">To bridge the gap of unemployment by providing skills development to the unskilled and unemployable women and youth, and to link beneficiaries or participants to potential employers.</p>
             </motion.div>
             <motion.div 
               whileHover={{ y: -5 }}
               className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
             >
               <h3 className="text-2xl font-serif font-bold text-blue-950 mb-4">Our Vision</h3>
-              <p className="text-gray-600">A thriving, skilled, and self-sufficient community where opportunity is accessible to all.</p>
+              <p className="text-gray-600">To facilitate communication between other organisations interested in the development of skills for young people and women, and to offer awareness on gender based violence to women at large and provide capacity building and support to gender based violence victims.</p>
             </motion.div>
             <motion.div 
               whileHover={{ y: -5 }}
@@ -62,10 +62,10 @@ export default function About() {
           
           <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-blue-100 before:from-transparent before:via-slate-300 before:to-transparent">
             {[
-              { year: '2015', title: 'Foundation', desc: 'Panorama SDC was established by a group of passionate educators.' },
-              { year: '2018', title: 'First Training Centre', desc: 'Opened our first physical location in White River town center.' },
-              { year: '2020', title: 'Digital Expansion', desc: 'Launched online programs to support remote learning during the pandemic.' },
-              { year: '2023', title: 'Reaching 5000+', desc: 'Celebrated the milestone of impacting over 5000 lives through our programs.' },
+              { year: '2016', title: 'Foundation', desc: 'Panorama SDC was established by a group of passionate men and women to bridge the gap of unemployment.' },
+              { year: '2019-2025', title: 'Empowering Women', desc: 'Reached 9207 women through life skills seminars and workshops.' },
+              { year: '2019-2025', title: 'Supporting Youth', desc: 'Reached 303 school girls through personal development programs and provided sanitary towels.' },
+              { year: '2019-2025', title: 'Skills Training', desc: 'A total number of 264 of participants where empowered through shop assistance housekeeping and hair dressing trainings' },
             ].map((item, idx) => (
               <motion.div 
                 key={idx}

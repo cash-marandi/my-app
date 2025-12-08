@@ -78,15 +78,13 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-4 py-2 rounded-full bg-blue-950 border border-gray-200 text-white font-medium text-sm mb-6 shadow-sm">
-                WE STRIVE TO EMPOWER YOUTH AND WOMAN
-              </div>
-              <h1 className="text-5xl md:text-7xl font-serif font-bold text-gray-900 leading-tight mb-6">
-                Empowering <span className="text-transparent bg-clip-text bg-gradient-to-r font-color1 from-primary-600 to-secondary-500">Skills</span>,
-                Uplifting Lives.
+
+              <h1 className="text-5xl md:text-7xl font-serif font-bold text-gray-900 leading-tight mb-6 mt-10">
+                We Strive to <span className="text-transparent bg-clip-text bg-gradient-to-r font-color1 from-primary-600 to-secondary-500">EMPOWER</span> Youth and Woman
+                
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
-                Panorama Skill Development Centre provides world-class vocational training and community programs in White River, Mpumalanga.
+                Panorama Skills Development Center provides empowerment workshop and community programs in the entire Mbombela.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/services" className="px-8 py-4 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl flex items-center gap-2 group">
@@ -113,7 +111,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-20 left-6 right-6 text-white">
-                  <p className="font-serif italic text-lg">"Education is the most powerful weapon which you can use to change the world."</p>
+                  <p className="font-serif italic text-lg">"Empowerment is the most powerful weapon which you can use to change communities"</p>
                 </div>
               </div>
 
@@ -141,12 +139,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">Why Choose Panorama?</h2>
-            <p className="text-gray-600">We are dedicated to providing holistic development through accredited training and community support.</p>
+            <p className="text-gray-600">To educate and share information with women regarding a number of issues hindering their developments</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: BookOpen, title: "Accredited Training", desc: "Recognized certifications that open doors to employment." },
+              { icon: BookOpen, title: "Skills Training", desc: "Recognized certifications that open doors to employment." },
               { icon: Users, title: "Community Driven", desc: "Programs designed by the community, for the community." },
               { icon: Trophy, title: "Expert Mentorship", desc: "Learn from industry professionals with real-world experience." },
             ].map((feature, idx) => (

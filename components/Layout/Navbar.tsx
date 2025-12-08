@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 z-50">
-            <img src="/images/logo.png" alt="Panorama SDC Logo" className="h-15 w-auto" />
+            <img src="/images/logo.png" alt="Panorama SDC Logo" className="h-20 w-auto" />
           </Link>
 
           {/* Desktop Nav */}

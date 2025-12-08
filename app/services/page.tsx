@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Hammer, Laptop, Users, Briefcase, ChevronRight } from 'lucide-react';
+import { Hammer, Laptop, Users, Briefcase, ChevronRight, Award, ShoppingCart, DollarSign, Heart } from 'lucide-react';
 import { db } from '@/services/mockDb';
 import { Service } from '@/types';
 
@@ -11,6 +11,10 @@ const iconMap: Record<string, React.ReactElement> = {
   Laptop: <Laptop size={32} />,
   Users: <Users size={32} />,
   Briefcase: <Briefcase size={32} />,
+  Award: <Award size={32} />,
+  ShoppingCart: <ShoppingCart size={32} />,
+  DollarSign: <DollarSign size={32} />,
+  Heart: <Heart size={32} />,
 };
 
 export default function Services() {
