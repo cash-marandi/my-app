@@ -79,7 +79,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-block px-4 py-2 rounded-full bg-blue-950 border border-gray-200 text-white font-medium text-sm mb-6 shadow-sm">
-                Building a brighter future together
+                WE STRIVE TO EMPOWER YOUTH AND WOMAN
               </div>
               <h1 className="text-5xl md:text-7xl font-serif font-bold text-gray-900 leading-tight mb-6">
                 Empowering <span className="text-transparent bg-clip-text bg-gradient-to-r font-color1 from-primary-600 to-secondary-500">Skills</span>,

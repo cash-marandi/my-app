@@ -39,15 +39,16 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-primary-500 flex-shrink-0 mt-0.5" />
-                <span>123 Panorama Drive, White River,<br />Mpumalanga, 1240</span>
+                <span>Corner of Joe Hanna and Willem Swanepoel street,<br /> White River, 1240</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary-500 flex-shrink-0" />
-                <span>+27 13 750 0000</span>
+                <span>+2771 595 3760</span><br />
+                <span>+2779 929 7776</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary-500 flex-shrink-0" />
-                <span>info@panoramasdc.org.za</span>
+                <span>panoramaskillsdev@gmail.com</span>
               </li>
             </ul>
           </div>
