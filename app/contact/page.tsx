@@ -1,52 +1,12 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Contact() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('General Inquiry');
-  const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState('');
-  const [error, setError] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setSuccess('');
-    setError('');
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ firstName, lastName, email, subject, message }),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setSuccess(data.message);
-        setFirstName('');
-        setLastName('');
-        setEmail('');
-        setSubject('General Inquiry');
-        setMessage('');
-      } else {
-        setError(data.error || 'Something went wrong.');
-      }
-    } catch (err) {
-      console.error(err);
-      setError('Failed to send message. Please try again later.');
-    } finally {
-      setLoading(false);
-    }
+    // Do nothing for now
   };
 
   return (
@@ -112,9 +72,7 @@ export default function Contact() {
                   <input 
                     type="text" 
                     id="firstName"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" 
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
                     required
                   />
                 </div>
@@ -123,9 +81,7 @@ export default function Contact() {
                   <input 
                     type="text" 
                     id="lastName"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" 
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
                     required
                   />
                 </div>
@@ -135,9 +91,7 @@ export default function Contact() {
                 <input 
                   type="email" 
                   id="email"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
                   required
                 />
               </div>
@@ -146,8 +100,6 @@ export default function Contact() {
                 <select 
                   id="subject"
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
-                  value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
                 >
                   <option>General Inquiry</option>
                   <option>Program Enrolment</option>
@@ -161,20 +113,15 @@ export default function Contact() {
                   id="message"
                   rows={4} 
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
                   required
                 ></textarea>
               </div>
               <button 
                 type="submit" 
-                className="w-full py-4 bg-blue-950 hover:bg-blue-900 text-white font-bold rounded-xl transition-colors shadow-lg shadow-primary-200"
-                disabled={loading}
+                className="w-full py-4 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-xl transition-colors shadow-lg shadow-primary-200"
               >
-                {loading ? 'Sending...' : 'Send Message'}
+                Send Message
               </button>
-              {success && <p className="text-green-600 mt-4 text-center">{success}</p>}
-              {error && <p className="text-red-600 mt-4 text-center">{error}</p>}
             </form>
           </motion.div>
         </div>
